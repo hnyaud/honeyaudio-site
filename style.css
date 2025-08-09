@@ -1,11 +1,15 @@
+/* Base and layout */
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1rem;
   font-family: 'Helvetica Neue', sans-serif;
   background-color: #fefefe;
   color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.6; /* Added for better readability */
 }
 
 header {
@@ -15,7 +19,7 @@ header {
 
 header h1 {
   font-size: 2.5rem;
-  margin: 0;
+  margin: 4rem;
 }
 
 header p {
@@ -36,6 +40,256 @@ header p {
 .gallery img {
   width: 100%;
   height: auto;
-  border: 1px solid #ddd;
+  /* Removed border, added subtle shadow for contrast */
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
   background-color: #fff;
 }
+
+section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 4rem 1.5rem; /* consistent padding */
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-weight: 600; /* added weight for headings */
+}
+
+section p,
+section ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  margin-bottom: 1.25rem; /* consistent margin */
+}
+
+.slideshow {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* consistent radius */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7); /* increased opacity for better visibility */
+  backdrop-filter: blur(3px); /* subtle blur */
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 8px; /* consistent radius */
+}
+
+/* Make slideshow buttons keyboard focusable and visible */
+.slide-btn:focus {
+  outline: 3px solid #e6b24a;
+  outline-offset: 2px;
+}
+
+.slide-btn.prev {
+  left: 0;
+}
+
+.slide-btn.next {
+  right: 0;
+}
+
+.store {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.gumroad-button {
+  background-color: #e6b24a !important;
+  color: #000 !important;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.gumroad-button:hover {
+  background-color: #f2c471 !important;
+  color: #000 !important;
+}
+
+.audio-player {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.audio-player h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.track {
+  margin-bottom: 2rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.track p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #dddddd;
+}
+
+body.dark-mode header,
+body.dark-mode section {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f5f5f5;
+}
+
+body.dark-mode p,
+body.dark-mode li {
+  color: #dddddd;
+}
+
+body.dark-mode a {
+  color: #ffb3f1;
+}
+
+body.dark-mode a:hover {
+  color: #ffd6f8;
+}
+
+body.dark-mode .track {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+}
+
+/* Dark mode gumroad button stays same */
+body.dark-mode .gumroad-button {
+  background-color: #e6b24a;
+  color: #000;
+}
+
+body.dark-mode .gumroad-button:hover {
+  background-color: #f2c471;
+}
+
+/* Dark mode toggle button improvements */
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.dark-toggle:hover {
+  background: #333;
+}
+
+/* Dark mode toggle button visible in dark mode */
+body.dark-mode .dark-toggle {
+  background: #222;
+  border: 1px solid #e6b24a;
+}
+
+/* Socials */
+.socials {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.socials h2 {
+  margin-bottom: 1rem;
+}
+
+.socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socials li {
+  margin: 0.5rem 0;
+}
+
+.socials a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #e6b24a;
+}
+
+/* Dark mode override */
+body.dark-mode .socials a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .socials a:hover {
+  color: #f2c471;
+}
+
+/* General consistent border radius removed from * */
