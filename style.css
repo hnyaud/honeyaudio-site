@@ -3,14 +3,34 @@ body {
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1rem;
-  font-family: 'Helvetica Neue', sans-serif;
   background-color: #fefefe;
   color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1.6; /* Added for better readability */
+
 }
+
+  /* Apply pixel font + no smoothing ONLY on elements with this class */
+  .pixel-font {
+    font-family: 'IBM EGA 8x14', monospace;
+    font-size: 14px;
+    line-height: 14px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" 0; /* disable ligatures if any */
+    letter-spacing: 0;
+  }
+
+
+
+@font-face {
+  font-family: 'IBM EGA 8x14';
+  src: url('fonts/WebPlus_IBM_EGA_8x14.woff') format('woff');
+}
+
+
 
 header {
   text-align: center;
@@ -291,5 +311,6 @@ body.dark-mode .socials a {
 body.dark-mode .socials a:hover {
   color: #f2c471;
 }
+
 
 /* General consistent border radius removed from * */
