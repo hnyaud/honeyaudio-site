@@ -313,4 +313,70 @@ body.dark-mode .socials a:hover {
 }
 
 
+/* Contact page layout */
+.contact-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #111;
+  background-color: #fff;
+  color: #111;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: #111;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #444;
+}
+
+/* Dark mode support */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #111;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+body.dark-mode .contact-form button {
+  background-color: #fff;
+  color: #111;
+}
+
+body.dark-mode .contact-form button:hover {
+  background-color: #ccc;
+}
+
+
 /* General consistent border radius removed from * */

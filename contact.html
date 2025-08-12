@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Honey Audio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pixel-font">
+
+<header>
+  <button id="darkToggle" class="dark-toggle">🌑</button>
+  <h1>Contact Honey Audio</h1>
+</header>
+
+<main class="contact-container">
+  <p>Got a question, booking inquiry, or just want to say hi? Fill out the form below.</p>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" required>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="_replyto" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</main>
+
+<script>
+  const toggle = document.getElementById('darkToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+
+</body>
+</html>
